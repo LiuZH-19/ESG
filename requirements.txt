@@ -1,0 +1,6 @@
+h5py==3.6.0
+numpy==1.21.2
+pandas==1.0.1
+scipy==1.6.1
+tensorboardX==2.5
+torch==1.7.1

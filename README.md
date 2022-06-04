@@ -6,16 +6,6 @@ Learning the Evolutionary and Multi-scale Graph Structure for Multivariate Time 
 
 ## Requirements
 
-- scipy
-- torch
-- tqdm
-- h5py
-- numpy
-- pandas
-- PyYAML
-- tensorboardX
-- torch
-
 Dependency can be installed using the following command:
 
 ```
@@ -39,21 +29,20 @@ Download  NYC-Bike and NYC-Taxi datasets from [Google Drive](https://drive.googl
 You can also run the following commands to generate train/test/val dataset at `data/{nyc-bike,nyc-taxi}/{train,val,test}.npz` by using  `*.h5` files.
 
 ```
-# Create data directories
-mkdir -p data/{nyc-bike,nyc-taxi}
+cd data
 
-# METR-LA
-python -m scripts.generate_training_data --output_dir=data/METR-LA --traffic_df_filename=data/metr-la.h5
+# NYC-Bike
+python gen_npz.py --h5_name nyc-bike
 
-# PEMS-BAY
-python -m scripts.generate_training_data --output_dir=data/PEMS-BAY --traffic_df_filename=data/pems-bay.h5
+# NYC-Taxi
+python gen_npz.py --h5_name nyc-taxi
 ```
 
 ## Model Training
 
 ### Single-step
 
-- Solar-Energy  (在跑 test62)
+- Solar-Energy  
 
 ```
 python train_single_step.py  --data solar-energy --expid expid  --num_nodes 137 --fc_dim 504288 --batch_size 16 --dy_embedding_dim 20 --runs 10 --horizon 3 
@@ -65,7 +54,7 @@ python train_single_step.py  --data solar-energy --expid expid  --num_nodes 137 
 python train_single_step.py  --data electricity --expid expid  --num_nodes 321 --fc_dim 252224 --batch_size 4 --dy_embedding_dim 20 --runs 10 --horizon 3 
 ```
 
-- Exchange Rate (在跑 test62)
+- Exchange Rate 
 
 ```
 python train_single_step.py  --data exchange-rate --expid expid  --num_nodes 8 --fc_dim 72560 --batch_size 4 --dy_embedding_dim 16 --runs 10 --horizon 3 
@@ -89,6 +78,31 @@ python train_multi_step.py --data nyc-bike --expid expid --num_nodes 250 --fc_di
 
 ```
 python train_multi_step.py --data nyc-taxi --expid expid --num_nodes 266 --fc_dim 95744 --batch_size 16  --dy_embedding_dim 20 --runs 10
+```
+
+## Run the trained Model
+
+You can run the following command to evaluate the test datasets using the trained model.
+
+```
+#Solar-Energy
+python test_single.py  --data solar-energy --horizon 24 --expid only_test
+
+#Electricity
+python test_single.py  --data electricity --horizon 24 --expid only_test
+
+#Exchange Rate
+python test_single.py  --data exchange-rate --horizon 24 --expid only_test
+
+#wind
+python test_single.py  --data wind --horizon 24 --expid only_test
+
+#NYC-Bike
+python test_multi.py  --data nyc-bike --expid test_only
+
+#NYC-Taxi
+python test_multi.py  --data nyc-taxi --expid test_only
+ 
 ```
 
 ## Acknowledgements
