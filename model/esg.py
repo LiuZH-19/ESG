@@ -189,7 +189,7 @@ class ESG(nn.Module):
 
     def forward(self, input):
         """
-        :param input: [B, n_hist, N, in_dim]
+        :param input: [B, in_dim, N, n_hist]
         :return: [B, n_pred, N, out_dim]
         """
 
