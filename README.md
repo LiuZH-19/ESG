@@ -2,7 +2,7 @@
 
 This is PyTorch implementation of ESG in the following paper:
 
-Learning the Evolutionary and Multi-scale Graph Structure for Multivariate Time Series Forecasting.
+[Learning the Evolutionary and Multi-scale Graph Structure for Multivariate Time Series Forecasting](https://dl.acm.org/doi/abs/10.1145/3534678.3539274)
 
 ## Requirements
 
@@ -116,7 +116,21 @@ https://github.com/nnzhan/MTGNN
 Please consider citing if you find this code useful to your research.
 
 ```
-
+@inproceedings{ye2022esg,
+author = {Ye, Junchen and Liu, Zihan and Du, Bowen and Sun, Leilei and Li, Weimiao and Fu, Yanjie and Xiong, Hui},
+title = {Learning the Evolutionary and Multi-Scale Graph Structure for Multivariate Time Series Forecasting},
+year = {2022},
+isbn = {9781450393850},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3534678.3539274},
+doi = {10.1145/3534678.3539274},
+booktitle = {Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+pages = {2296–2306},
+numpages = {11},
+location = {Washington DC, USA},
+series = {KDD '22}
+}
 ```
 
 
