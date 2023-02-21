@@ -45,25 +45,25 @@ python gen_npz.py --h5_name nyc-taxi
 - Solar-Energy  
 
 ```
-python train_single_step.py  --data solar-energy --expid <expid>  --num_nodes 137 --fc_dim 504288 --batch_size 16 --dy_embedding_dim 20 --runs 10 --horizon 3 
+python train_single_step.py  --data solar-energy --expid <expid>  --num_nodes 137 --batch_size 16 --dy_embedding_dim 20 --runs 10 --horizon 3 
 ```
 
 - Electricity
 
 ```
-python train_single_step.py  --data electricity --expid <expid>  --num_nodes 321 --fc_dim 252224 --batch_size 4 --dy_embedding_dim 20 --runs 10 --horizon 3 
+python train_single_step.py  --data electricity --expid <expid>  --num_nodes 321 --batch_size 4 --dy_embedding_dim 20 --runs 10 --horizon 3 
 ```
 
 - Exchange Rate 
 
 ```
-python train_single_step.py  --data exchange-rate --expid <expid>  --num_nodes 8 --fc_dim 72560 --batch_size 4 --dy_embedding_dim 16 --runs 10 --horizon 3 
+python train_single_step.py  --data exchange-rate --expid <expid>  --num_nodes 8 --batch_size 4 --dy_embedding_dim 16 --runs 10 --horizon 3 
 ```
 
 - Wind
 
 ```
-python train_single_step.py  --data wind --expid <expid>  --num_nodes 28 --fc_dim 104896 --batch_size 32 --dy_embedding_dim 20 --runs 10 --horizon 3 
+python train_single_step.py  --data wind --expid <expid>  --num_nodes 28 --batch_size 32 --dy_embedding_dim 20 --runs 10 --horizon 3 
 ```
 
 ### Multi-step
@@ -71,13 +71,13 @@ python train_single_step.py  --data wind --expid <expid>  --num_nodes 28 --fc_di
 - NYC-Bike
 
 ```
-python train_multi_step.py --data nyc-bike --expid <expid> --num_nodes 250 --fc_dim 95744 --batch_size 16  --dy_embedding_dim 20 --runs 10
+python train_multi_step.py --data nyc-bike --expid <expid> --num_nodes 250 --batch_size 16  --dy_embedding_dim 20 --runs 10
 ```
 
 - NYC-Taxi
 
 ```
-python train_multi_step.py --data nyc-taxi --expid <expid> --num_nodes 266 --fc_dim 95744 --batch_size 16  --dy_embedding_dim 20 --runs 10
+python train_multi_step.py --data nyc-taxi --expid <expid> --num_nodes 266 --batch_size 16  --dy_embedding_dim 20 --runs 10
 ```
 
 ## Run the trained Model

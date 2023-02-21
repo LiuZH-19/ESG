@@ -144,7 +144,7 @@ parser.add_argument('--end_channels',type=int,default=64,help='end channels')
 parser.add_argument('--kernel_set',type=list,default=[2,3,6,7],help='the kernel set in TCN')
 parser.add_argument('--dilation_exponential',type=int,default=2,help='dilation exponential')
 parser.add_argument('--gcn_depth',type=int,default=2,help='graph convolution depth')
-parser.add_argument('--fc_dim',type=int,default=504288,help='fc_dim') #so 504288 el  252224 ex 72560   wind 104896
+# parser.add_argument('--fc_dim',type=int,default=504288,help='fc_dim') #so 504288 el  252224 ex 72560   wind 104896
 parser.add_argument('--st_embedding_dim',type=int,default=40,help='the dimension of static node representation')
 parser.add_argument('--dropout',type=float,default=0.3,help='dropout rate')
 parser.add_argument('--propalpha',type=float,default=0.05,help='prop alpha')
@@ -182,7 +182,7 @@ def main(runid):
                   conv_channels=args.conv_channels, residual_channels=args.residual_channels,
                   skip_channels=args.skip_channels, end_channels= args.end_channels, kernel_set=args.kernel_set,
                   dilation_exp=args.dilation_exponential, gcn_depth=args.gcn_depth,
-                  device=device, fc_dim = args.fc_dim, st_embedding_dim=args.st_embedding_dim,                  
+                  device=device, fc_dim = (node_fea.shape[0]-18)*16, st_embedding_dim=args.st_embedding_dim,                  
                   dropout=args.dropout,  propalpha=args.propalpha, layer_norm_affline=False,
                   static_feat = node_fea)
  
